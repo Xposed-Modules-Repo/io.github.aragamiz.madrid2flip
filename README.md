@@ -13,6 +13,8 @@
 > **前置依赖**：需配合小米 18 背屏中心系统资源 KSU / Magisk 模块（`madrid_subscreen_port_v1.0.0.zip`）使用，请前往源码仓库 Releases 下载刷入：
 > https://github.com/Aragamiz/Madrid2flip/releases
 >
-> **挂载环境提示**：测试环境中使用 **Magic Mount RS** 与 **Zygisk Next** 挂载背屏附加资源模块；如果刷入后仍提示未检测到 KSU 背屏模块，请依次检查 **Magic Mount RS**、**Zygisk Next** 与 **小米 18 背屏资源模块（`madrid_subscreen_port_v1.0.0.zip`）** 这三个模块是否正常安装并启用。
+> **挂载环境与排查提示**：
+> - 测试环境使用 **Magic Mount RS** 与 **Zygisk Next** 挂载背屏附加资源模块；请**先安装并启用 Magic Mount RS 与 Zygisk Next**，再刷入 `madrid_subscreen_port_v1.0.0.zip` 并重启（若安装顺序相反导致提示无 KSU 背屏模块，请在 Magic Mount RS 启用状态下卸载重刷 `madrid_subscreen_port_v1.0.0.zip` 并重启）。
+> - **务必在 LSPosed 作用域中勾选 `com.xiaomi.subscreencenter`** 并重启！漏勾会导致 Zygisk Next 对其执行 `umount` 卸载自身 APK 而启动秒崩；如使用月虹隐藏（`YH_YC`）/ 悲伤压缩包（`bszip`）等环境隐藏模块，也请对 `com.xiaomi.subscreencenter` 放行。
 >
-> 刷入资源模块、在 LSPosed 启用本模块（勾选默认推荐作用域）并在 KernelSU 授予 Root 权限后，重启设备即可生效。
+> 刷入资源模块、在 LSPosed 启用本模块（勾选全部 7 个默认推荐作用域）并在 KernelSU 授予 Root 权限后，重启设备即可生效。
